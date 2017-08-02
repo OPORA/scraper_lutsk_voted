@@ -1,7 +1,6 @@
 require_relative 'get_page'
 require_relative 'read_file'
 require 'base32'
-require_relative 'voted'
 
 require_relative 'get_mps'
 
