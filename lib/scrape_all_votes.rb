@@ -7,7 +7,7 @@ require_relative 'get_mps'
 class GetAllVotes
   def self.votes(url, cadent)
 
-     file_path = "http://www.lutskrada.gov.ua#{url}"
+     file_path = "http://old.lutskrada.gov.ua#{url}"
      p file_path
      file_names = []
      file_name = "#{File.dirname(__FILE__)}/../files/download/#{Base32.encode(file_path)}"
