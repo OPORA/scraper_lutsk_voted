@@ -8,7 +8,7 @@ class GetPages
     @all_page = []
     $all_mp = GetMp.new
     @vot_seved =  VoteEvent.all(:fields => [:date_caden], :order => [:date_caden]).map{|v| v.date_caden}.uniq
-    url = "http://www.lutskrada.gov.ua/sesiyi-miskoyi-radi"
+    url = "http://old.lutskrada.gov.ua/sesiyi-miskoyi-radi"
     page = GetPage.page(url)
     check = nil
     page.css('.even p').each do |p|
