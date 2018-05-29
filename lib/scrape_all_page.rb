@@ -1,13 +1,13 @@
 require_relative 'get_page'
-#require_relative 'scrape_all_votes'
+require_relative 'scrape_all_votes'
 require_relative 'get_mps'
-#require_relative 'voted'
+require_relative 'voted'
 
 class GetPages
   def initialize
     @all_page = []
     $all_mp = GetMp.new
-    #@vot_seved =  VoteEvent.all(:fields => [:date_caden], :order => [:date_caden]).map{|v| v.date_caden}.uniq
+    @vot_seved =  VoteEvent.all(:fields => [:date_caden], :order => [:date_caden]).map{|v| v.date_caden}.uniq
     url = "https://www.lutskrada.gov.ua/pages/rezuaty-holosuvan-zasidan-sesii"
     page = GetPage.page(url)
     page.css('.c-text p').each do |p|
@@ -25,4 +25,3 @@ class GetPages
     end
   end
 end
-GetPages.new
